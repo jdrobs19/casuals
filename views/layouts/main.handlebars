@@ -4,12 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Casuals</title>
+
+    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
-    {{{body}}}
-{{!-- <script src="js/main.js"></script> --}}
+    <div class="container">
+        <header>
+            <div class="header-container">
+                <nav>
+                    <a href="/">Home</a>
+                    {{#if loggedIn}}
+                    <button type="button" id="logout">Logout</button>
+                    {{else}}
+                    <a href="/login">Login</a>
+                    {{if}}
+                </nav>
+                <section>
+                    <div class="title">
+                        <h1>Casuals</h1>
+                    </div>
+                </section>
+            </div>
+        </header>
+        <main>
+            {{{body}}}
+        </main>
+    </div>
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+    {{!-- <script src="js/main.js"></script> --}}
 </body>
 
 </html>
