@@ -1,24 +1,39 @@
-require('dotenv').config();
-const path = require('path');
 const express = require('express');
-const morgan = require('morgan');
+const routes = require('./controllers');
+const sequelize = require('./config/config');
+const path = require('path');
 const exphbs = require('express-handlebars');
-const PORT = process.env.PORT || 3006;
+const hbs = exphbs.create({});
+const session = require('express-session');
+const morgan = require('morgan');
+
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+const sess = {
+    secret: 'Secret secret Secret',
+    cookie: {},
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+        db: sequelize
+    })
+};
 
 const app = express();
-const sequelize = require('./config/config');
+const PORT = process.env.PORT || 3006;
 
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars');
-
-app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(morgan('dev'));
-app.use(require('./routes/htmlRoutes'));
 
-sequelize.sync({force: false}).then(() => {
-    app.listen(PORT, ()=> {
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
+app.use(routes);
+
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => {
         console.log(`app now running on http://localhost:${PORT}/`);
     })
-})
+});
