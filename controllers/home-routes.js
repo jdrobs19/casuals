@@ -5,8 +5,9 @@ const { User, Rank } = require('../models');
 
 router.get('/',(req, res) => {
    
-    res.render('homepage')
+    res.render('home')
 });
+
 
 
 router.get('/login', (req, res) => {

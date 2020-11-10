@@ -28,14 +28,16 @@ nav {
     text-decoration: none;
     color: #65686e;
     font-weight: bold;
+    
 }
 
 .container button {
-    background: none;
-    border: none;
+    
     font-size: 22px;
     font-weight: bold;
     background-color: #c5c5c5;
+    border-radius: 5px;
+    
 }
 
 .container section {
@@ -58,31 +60,7 @@ nav {
 main {
     display: flex;
     justify-content: space-around;
-}
-
-.article-container {
-    width: 80%;
-    margin: 40px auto 40px auto;
-}
-
-article {
-    margin: 15px 0;
-    background-color: #4169e1;
-    color: #65686e;
-    box-shadow: 5px 5px 5px #DCDCDC;
-    padding: 2px;
-}
-
-.article-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
-}
-
-.article-text {
-    background-color: #65686e;
-    color: #4169e1;
-    padding: 15px;
+    
 }
 
 .login-container {
@@ -99,8 +77,8 @@ label {
     visibility: hidden;
 }
 
-.login-container input {
-    margin: 5px;
+.login-form input {
+    margin: 2px;
     font-size: 18px;
     border-radius: 5px;
 }
@@ -113,10 +91,13 @@ label {
     padding: 2px;
     font-size: 20px;
     min-width: 200px;
+    
 }
 
-.login-container form {
-    margin: 5px 0;
+.register-form input {
+    margin: 2px;
+    font-size: 18px;
+    border-radius: 5px;
 }
 
 
