@@ -23,7 +23,7 @@ async function registerFormHandler(event) {
     }
 }
 
-document.querySelector('.register-form').addEventListener('submit', registerFormHandler);
+
 
 async function loginFormHandler(event) {
     event.preventDefault();
@@ -50,3 +50,4 @@ async function loginFormHandler(event) {
 }
 
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+document.querySelector('.register-form').addEventListener('submit', registerFormHandler);
