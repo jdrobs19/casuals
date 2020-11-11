@@ -11,15 +11,7 @@ Games.init(
             primaryKey: true,
             autoIncrement: true
         },
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        user_id: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        genre_id: {
+        title: {
             type: DataTypes.STRING,
             allowNull: false
         }

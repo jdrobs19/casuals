@@ -3,7 +3,7 @@ const { Games } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
-    Tags.findAll({})
+    Games.findAll({})
         .then(dbUserData => {
             res.json(dbUserData);
         })
@@ -15,8 +15,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     Games.create({
-        tag_name: req.body.tag_name,
-        genre_id: req.body.genre_id
+        title: req.body.title,
     })
         .then(dbTagData => {
             res.json(dbTagData);
@@ -28,10 +27,9 @@ router.post('/', (req, res) => {
 });
 
 router.put('/:id', withAuth, (req, res) => {
-    Tags.update( 
+    Games.update( 
         {
-        tag_name: req.body.tag_name,
-        genre_id: req.body.genre_id
+        title: req.body.title,
     },
     {
         where: {
