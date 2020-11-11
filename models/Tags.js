@@ -1,0 +1,33 @@
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/config');
+
+class Tags extends Model {}
+
+Tags.init(
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
+        },
+
+        tag_name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        catergory_id: {
+            
+        }
+    },
+
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'tags'
+    }
+)
+
+module.exports = Tags;
