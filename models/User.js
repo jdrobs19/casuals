@@ -34,10 +34,6 @@ User.init(
             validate: {
                 len: [6]
             }
-        },
-        game_id: {
-            type: DataTypes.INTEGER,
-            allowNull: true
         }
     },
     {
@@ -56,7 +52,7 @@ User.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'user'
+        modelName: 'User'
     }
 )
 

@@ -16,14 +16,14 @@ async function registerFormHandler(event) {
             headers: { 'Content-Type': 'application/json' }
         });
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace('/dashboard');
         } else {
             alert(response.statusText);
         }
     }
 }
 
-
+document.querySelector('.register-form').addEventListener('submit', registerFormHandler);
 
 async function loginFormHandler(event) {
     event.preventDefault();
@@ -42,7 +42,7 @@ async function loginFormHandler(event) {
         });
 
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace('/dashboard');
         } else {
             alert(response.statusText);
         }
@@ -50,4 +50,3 @@ async function loginFormHandler(event) {
 }
 
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
-document.querySelector('.register-form').addEventListener('submit', registerFormHandler);

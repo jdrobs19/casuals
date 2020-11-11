@@ -11,7 +11,10 @@ Games.init(
             primaryKey: true,
             autoIncrement: true
         },
-
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         user_id: {
             type: DataTypes.STRING,
             allowNull: false
@@ -26,7 +29,7 @@ Games.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'genre'
+        modelName: 'Games'
     }
 )
 
