@@ -4,8 +4,8 @@ const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
     Games.findAll({})
-        .then(dbUserData => {
-            res.json(dbUserData);
+        .then(dbGamesData => {
+            res.json(dbGamesData);
         })
         .catch(err => {
             console.log(err);
@@ -15,10 +15,10 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     Games.create({
-        title: req.body.title,
+        title: req.body.title,    
     })
-        .then(dbTagData => {
-            res.json(dbTagData);
+        .then(dbGamesData => {
+            res.json(dbGamesData);
         })
         .catch(err => {
             console.log(err);
@@ -36,12 +36,12 @@ router.put('/:id', withAuth, (req, res) => {
         id: req.params.id
     }
     })
-    .then(dbUserData => {
-        if (!dbUserData[0]) {
-            res.status(404).json({ message: 'No tag found with this id' });
+    .then(dbGamesData => {
+        if (!dbGamesData[0]) {
+            res.status(404).json({ message: 'No games found with this id' });
             return;
         }
-        res.json(dbUserData);
+        res.json(dbGamesData);
     })
     .catch(err => {
         console.log(err);

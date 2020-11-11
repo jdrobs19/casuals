@@ -1,15 +1,13 @@
 const newFormHandler = async function(event) {
     event.preventDefault();
   
-    const genre = document.querySelector('input[name="game-genre"]').value;
-    const game = document.querySelector('textarea[name="game-body"]').value;
+    const title = document.querySelector('input[name="game-title"]').value;
   
     const token = localStorage.getItem("token");
-    await fetch(`/api/post`, {
+    await fetch(`/api/games`, {
       method: "POST",
       body: JSON.stringify({
-        genre,
-        game
+        title
       }),
       headers: {
         "Content-Type": "application/json",
