@@ -8,6 +8,6 @@ const Games = require('./Games');
 
 Games.belongsTo(Genre, { foreignKey: 'genre_id'});
 
-Games.belongsToMany(User, { foreignKey: 'game_id'});
+Games.belongsToMany(User, { foreignKey: 'user_id'});
 
 module.exports = { User, Rank, Genre, Games };

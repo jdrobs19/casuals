@@ -12,7 +12,7 @@ Games.init(
             autoIncrement: true
         },
 
-        tag_name: {
+        user_id: {
             type: DataTypes.STRING,
             allowNull: false
         },
