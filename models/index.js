@@ -1,14 +1,13 @@
 const User = require('./User');
 // const Rank = require('./rank');
-const Category = require('./Category');
-const Tags = require('./Tags');
-const UserTags =require('./UserTags');
+const Genre = require('./Genre');
+const Games = require('./Games');
 
 // Rank.belongsTo(User, { foreignKey: 'user_id' });
-// //Category.belongsTo(User, { foreignKey: 'user_id' });
+// //Genre.belongsTo(User, { foreignKey: 'user_id' });
 
-Tags.belongsToMany(Category, {});
+Games.belongsTo(Genre, { foreignKey: 'genre_id'});
 
-UserTags.belongsToMany(User, {});
+Games.belongsToMany(User, { foreignKey: 'game_id'});
 
-module.exports = { User, Rank, Category, Tags, UserTags };
+module.exports = { User, Rank, Genre, Games };

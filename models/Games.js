@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/config');
 
-class Tags extends Model {}
+class Games extends Model {}
 
-Tags.init(
+Games.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -16,18 +16,18 @@ Tags.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        catergory_id: {
-            
+        genre_id: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     },
-
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'tags'
+        modelName: 'genre'
     }
 )
 
-module.exports = Tags;
+module.exports = Games;
