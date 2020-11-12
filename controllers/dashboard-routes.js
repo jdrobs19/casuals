@@ -3,8 +3,22 @@ const { Games, Genre } = require("../models/");
 const withAuth = require("../utils/auth");
 
   router.get("/", withAuth, (req, res) => {
-    res.render("all-games", {
-      layout: "dashboard"
+    Games.findAll({
+      where: {
+        user_id: req.session.user_id
+      }
+    })
+    .then(dbGamesData => {
+      const games = dbGamesData.map((game) => game.get({plain: true}));
+      
+      res.render("all-games", {
+        layout: "dashboard",
+        games
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.redirect('login');
     });
   });
 
