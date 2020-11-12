@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS casuals_db;
+
+CREATE DATABASE casuals_db;
