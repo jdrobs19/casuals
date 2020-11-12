@@ -11,4 +11,5 @@ Games.belongsTo(Genre, { foreignKey: 'genre_id'});
 User.hasMany(Games, {foreignKey: 'user_id'});
 
 
+
 module.exports = { User, Genre, Games };

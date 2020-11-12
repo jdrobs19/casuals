@@ -13,9 +13,11 @@ router.get('/', (req, res) => {
         });
 });
 
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
+    
     Games.create({
-        title: req.body.title,    
+        title: req.body.title, 
+        user_id: req.session.user_id   
     })
         .then(dbGamesData => {
             res.json(dbGamesData);
