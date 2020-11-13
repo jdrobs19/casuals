@@ -1,1 +1,11 @@
-<h2>Hello World</h2>
+<div class="users">
+  {{#each users}}
+  <article class="card">
+    <div class="card-header flex-row justify-space-between">
+      <h2>
+        <a href="/users/{{id}}">{{username}}</a>
+      </h2>
+    </div>
+  </article>
+  {{/each}}
+</div>
