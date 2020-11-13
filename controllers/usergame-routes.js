@@ -3,10 +3,13 @@ const {User , Games} = require ('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/:id', (req,res) => {
-    User.findAll({
+    Games.findAll({
         where: {
-            game_id: req.params.id
-        }
+            id: req.params.id
+        },
+        include: [
+            User
+        ]
     })
     .then(dbUserData => {
         const users = dbUserData.map((user) => user.get({plain: true}));
