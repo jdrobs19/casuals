@@ -2,10 +2,10 @@ const router = require('express').Router();
 const {User , Games} = require ('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/:title', (req,res) => {
+router.get('/:id', (req,res) => {
     Games.findAll({
         where: {
-            title: req.params.title
+            user_id: req.params.id
         },
         include: [User]
     })
@@ -13,7 +13,7 @@ router.get('/:title', (req,res) => {
         // console.log(dbUserData);
         const users = dbUserData.map((user) => user.get({plain: true}));
         console.log(users)
-        res.render('gameusers', {
+        res.render('single-user', {
             layout: 'game',
             users
         });

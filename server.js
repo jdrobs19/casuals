@@ -33,7 +33,7 @@ app.set('view engine', 'handlebars');
 
 app.use(routes);
 
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => {
         console.log(`app now running on http://localhost:${PORT}/`);
     })

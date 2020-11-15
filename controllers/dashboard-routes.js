@@ -1,16 +1,17 @@
 const router = require("express").Router();
-const { Games, Genre } = require("../models/");
+const axios = require('axios');
+const { Games } = require("../models/");
 const withAuth = require("../utils/auth");
 
-  router.get("/", withAuth, (req, res) => {
-    Games.findAll({
-      where: {
-        user_id: req.session.user_id
-      }
-    })
+router.get("/", withAuth, (req, res) => {
+  Games.findAll({
+    where: {
+      user_id: req.session.user_id
+    }
+  })
     .then(dbGamesData => {
-      const games = dbGamesData.map((game) => game.get({plain: true}));
-      
+      const games = dbGamesData.map((game) => game.get({ plain: true }));
+
       res.render("all-games", {
         layout: "dashboard",
         games
@@ -20,12 +21,31 @@ const withAuth = require("../utils/auth");
       console.log(err);
       res.redirect('login');
     });
-  });
+});
 
-  router.get("/new", withAuth, (req, res) => {
-    res.render("new-game", {
-      layout: "dashboard"
+router.get("/new", withAuth, (req, res) => {
+  axios.get(`https://api.rawg.io/api/games?API_KEY=${process.env.API_KEY}&page_size=999`)
+    .then(data => {
+      const games = data.data.results;
+
+      console.log(games[0]);
+
+      res.render("new-game", {
+        layout: "dashboard",
+        games
+      });
+
+
+      // fetch(`https://api.rawg.io/api/games?API_KEY=${process.env.API_KEY}`)
+      //   .then(res => res.json())
+      //   .then(data => {
+      //     console.log(data);
+
+      //     res.render("new-game", {
+      //       layout: "dashboard"
+      //     });
+      //   })
     });
-  });
-  
+});
+
 module.exports = router;

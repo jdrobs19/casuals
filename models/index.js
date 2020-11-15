@@ -4,11 +4,11 @@ const Games = require('./Games');
 
 
 
-Games.belongsTo(Genre, { foreignKey: 'genre_id'});
+// Games.belongsTo(Genre, { foreignKey: 'genre_id'});
 
 User.hasMany(Games, {foreignKey: 'user_id'});
 
-Games.belongsToMany(User, {foreignKey: 'game_id'});
+Games.belongsTo(User);
 
 
 
