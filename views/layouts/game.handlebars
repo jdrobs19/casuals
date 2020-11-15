@@ -9,24 +9,26 @@
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
-<body class="flex-column min-100-vh">
-  <nav class="navbar">
-    <ul class="flex-row">
-      <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
-      <li class="li-inline nav-item"><a href="#" id="logout">Logout</a></li>
-    </ul>
-  </nav>
-  <header class="hero">
-    <h1 class="app-title">Users & Games</h1>
-  </header>
+<body>
+  <div class="container">
+    <header>
+      <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <nav>
+          <a href="/dashboard">Dashboard</a>
+          <a href="#" id="logout">Logout</a>
+        </nav>
+        <section>
+          <div class="title">
+            <h1>Games & Users</h1>
+          </div>
+        </section>
+      </div>
+    </header>
 
-  <main class="col-auto">
-    {{{body}}}
-  </main>
-
-  <footer class="footer flex-row justify-center">
-  
-  </footer>
+    <main>
+      {{{body}}}
+    </main>
+  </div>
 </body>
 
 <script src="/javascript/logout.js"></script>
