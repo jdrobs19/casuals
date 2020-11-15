@@ -12,6 +12,9 @@ header {
     background-color: #fd435e;
     color: #c5c5c5;
     padding: 20px;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
 }
 
 nav {
