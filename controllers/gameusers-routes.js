@@ -13,7 +13,7 @@ router.get('/:id', (req,res) => {
     })
     .then(dbUserData => {
         const users = dbUserData.map((user) => user.get({plain: true}));
-        res.render('usergame', {layout: 'game'});
+        res.render('gameusers', {layout: 'game'});
     })
     .catch(err => {
         console.log(err);
