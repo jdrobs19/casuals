@@ -1,11 +1,7 @@
 <div class="users">
   {{#each users}}
-  <article class="card">
-    <div class="card-header flex-row justify-space-between">
       <h2>
-        <a href="/users/{{User.id}}">{{User.username}}</a>
+        <a class = "listed-game-user" href="/users/{{User.id}}">{{User.username}}</a>
       </h2>
-    </div>
-  </article>
   {{/each}}
 </div> 
