@@ -5,7 +5,13 @@
   <form id="new-game-form" class="card-body">
 
     <label class="form-label" for="game-title">Game Title</label>
-    <input name="game-title" class="form-input" placeholder="Game Title" />
+    <input list="games" name="game-title" class="form-input" placeholder="Game Title" />
+
+    <datalist id="games">
+      {{#each games}}
+      <option value="{{name}}" />
+      {{/each}}
+    </datalist>
 
     <button type="submit" class="btn">Add</button>
   </form>

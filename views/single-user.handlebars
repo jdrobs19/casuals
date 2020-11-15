@@ -1,0 +1,12 @@
+<div>
+	<p>Name: {{users.0.User.username}}</p>
+	<p>Email: <a href="mailto:{{users.0.User.email}}" target="_blank" rel="noreferrer noopener">{{users.0.User.email}}</a></p>
+</div>
+
+<div>
+	<ul>
+	{{#each users}}
+		<li><a href="/games/{{title}}">{{title}}</a></li>
+	{{/each}}
+	</ul>
+</div>
