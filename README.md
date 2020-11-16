@@ -10,7 +10,7 @@ Looking for group site for gamers. Users can create an account and add games tha
 * [License](#license)
 
 ## Contributing
-Created by Jordan Roberts, Nickolas Foster, and Charles Marshall
+Created by Jordan Roberts, Nickolas Foster, Charles Marshall, and Diarmuid Murphy
 
 ## Test
 None
