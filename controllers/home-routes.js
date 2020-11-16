@@ -1,17 +1,17 @@
 const router = require('express').Router();
 const sequelize = require('../config/config');
-const { User, Genre, Games } = require('../models');
+const { User, Games } = require('../models');
 
 
-router.get('/',(req, res) => {
-   
+router.get('/', (req, res) => {
+
     res.render('home')
 });
 
 
 
 router.get('/login', (req, res) => {
-    
+
     res.render('login')
 });
 
