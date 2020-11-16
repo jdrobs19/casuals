@@ -12,10 +12,12 @@ header {
     background-color: #fd435e;
     color: #c5c5c5;
     padding: 20px;
+    height: 100px;
 }
 
 nav {
     font-size: 22px;
+    position: relative;
 }
 
 .container nav a, .container nav button {
@@ -27,8 +29,7 @@ nav {
 .container nav a {
     text-decoration: none;
     color: #65686e;
-    font-weight: bold;
-    
+    font-weight: bold;   
 }
 
 .container button {
@@ -36,8 +37,7 @@ nav {
     font-size: 22px;
     font-weight: bold;
     background-color: #c5c5c5;
-    border-radius: 5px;
-    
+    border-radius: 5px; 
 }
 
 .container section {
@@ -53,14 +53,12 @@ nav {
     font-size: 36px;
     max-width: max-content;
     margin-right: 2px;
-    margin: 0 auto;
-    
+    margin: 0 auto; 
 }
 
 main {
     display: flex;
     justify-content: space-around;
-    
 }
 
 .login-container {
@@ -91,7 +89,6 @@ label {
     padding: 2px;
     font-size: 20px;
     min-width: 200px;
-    
 }
 
 .register-form input {
@@ -100,11 +97,90 @@ label {
     border-radius: 5px;
 }
 
-
-
 .container nav a:hover, .container nav button:hover, #create-post-btn:hover {
     color: #fd435e;
     background-color: #ffff;
     transition: all .5s;
+}
+
+.app-title a{
+    background-color: #dfdfdf;
+    color: #fd435e;
+    text-decoration: none;
+    box-shadow: 2px 2px 2px #65686e;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+a{
+    color: #fd435e;
+    text-decoration: none;
+}
+
+#logout{
+    text-decoration: none;
+
+    color: #65686e;
+}
+
+
+.navbar{
+    background-color: #fd435e;
+}
+
+.hero{
+    margin: 0 auto;
+    text-align: center;
+}
+
+li a{
+    color: #65686e;
+}
+
+div a{
+   color: #fd435e; 
+}
+
+.listed-game-user{
+    text-decoration: none;
+}
+
+.app-title a{
+    background-color: #dfdfdf;
+    color: #fd435e;
+    text-decoration: none;
+    box-shadow: 2px 2px 2px #65686e;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+a{
+    color: #fd435e;
+    text-decoration: none;
     
+}
+
+#logout{
+    text-decoration: none;
+    
+    color: #65686e;
+    
+}
+
+
+.navbar{
+    background-color: #fd435e;
+}
+
+.hero{
+    margin: 0 auto;
+    text-align: center;
+}
+
+li a{
+    color: #65686e;
+}
+
+div a{
+   color: #fd435e; 
 }

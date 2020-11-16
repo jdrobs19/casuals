@@ -1,6 +1,6 @@
 const games_id = document.querySelector('input[name="games-id"]').value;
 
-const editFormHandler = async function(event) {
+const editFormHandler = async function (event) {
   event.preventDefault();
 
   const title = document.querySelector('input[name="games-title"]').value;
@@ -20,7 +20,7 @@ const editFormHandler = async function(event) {
   document.location.replace('/dashboard');
 };
 
-const deleteClickHandler = async function() {
+const deleteClickHandler = async function () {
   await fetch(`/api/games/${games_id}`, {
     method: 'DELETE'
   });

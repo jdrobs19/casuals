@@ -3,7 +3,7 @@ const apiRoutes = require('./api');
 const homeRoutes = require('./home-routes.js');
 const dashboardRoutes = require('./dashboard-routes.js');
 const gameusersRoutes = require('./gameusers-routes');
-const singleUserRoutes =require('./single-user');
+const singleUserRoutes = require('./single-user');
 
 
 router.use('/api', apiRoutes);

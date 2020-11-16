@@ -34,17 +34,6 @@ router.get("/new", withAuth, (req, res) => {
         layout: "dashboard",
         games
       });
-
-
-      // fetch(`https://api.rawg.io/api/games?API_KEY=${process.env.API_KEY}`)
-      //   .then(res => res.json())
-      //   .then(data => {
-      //     console.log(data);
-
-      //     res.render("new-game", {
-      //       layout: "dashboard"
-      //     });
-      //   })
     });
 });
 
