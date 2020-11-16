@@ -14,10 +14,10 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', withAuth, (req, res) => {
-    
+
     Games.create({
-        title: req.body.title, 
-        user_id: req.session.user_id   
+        title: req.body.title,
+        user_id: req.session.user_id
     })
         .then(dbGamesData => {
             res.json(dbGamesData);
@@ -29,26 +29,26 @@ router.post('/', withAuth, (req, res) => {
 });
 
 router.put('/:id', withAuth, (req, res) => {
-    Games.update( 
+    Games.update(
         {
-        title: req.body.title,
-    },
-    {
-        where: {
-        id: req.params.id
-    }
-    })
-    .then(dbGamesData => {
-        if (!dbGamesData[0]) {
-            res.status(404).json({ message: 'No games found with this id' });
-            return;
-        }
-        res.json(dbGamesData);
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+            title: req.body.title,
+        },
+        {
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(dbGamesData => {
+            if (!dbGamesData[0]) {
+                res.status(404).json({ message: 'No games found with this id' });
+                return;
+            }
+            res.json(dbGamesData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 module.exports = router;
