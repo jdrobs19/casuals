@@ -12,13 +12,12 @@ header {
     background-color: #fd435e;
     color: #c5c5c5;
     padding: 20px;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
+    height: 100px;
 }
 
 nav {
     font-size: 22px;
+    position: relative;
 }
 
 .container nav a, .container nav button {
@@ -98,12 +97,48 @@ label {
     border-radius: 5px;
 }
 
-
-
 .container nav a:hover, .container nav button:hover, #create-post-btn:hover {
     color: #fd435e;
     background-color: #ffff;
     transition: all .5s;
+}
+
+.app-title a{
+    background-color: #dfdfdf;
+    color: #fd435e;
+    text-decoration: none;
+    box-shadow: 2px 2px 2px #65686e;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+a{
+    color: #fd435e;
+    text-decoration: none;
+}
+
+#logout{
+    text-decoration: none;
+
+    color: #65686e;
+}
+
+
+.navbar{
+    background-color: #fd435e;
+}
+
+.hero{
+    margin: 0 auto;
+    text-align: center;
+}
+
+li a{
+    color: #65686e;
+}
+
+div a{
+   color: #fd435e; 
 }
 
 .listed-game-user{

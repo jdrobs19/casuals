@@ -1,12 +1,17 @@
-<div>
-	<p>Name: {{users.0.User.username}}</p>
-	<p>Email: <a href="mailto:{{users.0.User.email}}" target="_blank" rel="noreferrer noopener">{{users.0.User.email}}</a></p>
-</div>
+<div class="container">
 
+<div class="pure-menu-horzontal">
+	<h2>Username: {{users.0.User.username}}</h2>
+	<h4>Email: <a href="mailto:{{users.0.User.email}}" target="_blank" rel="noreferrer noopener">{{users.0.User.email}}</a></h4>
+</div>
+<br>
 <div>
+	<h2>User's Games</h2>
 	<ul>
 	{{#each users}}
 		<li><a class = "listed-game-user" href="/games/{{title}}">{{title}}</a></li>
 	{{/each}}
 	</ul>
+</div>
+
 </div>
