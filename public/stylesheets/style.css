@@ -12,10 +12,12 @@ header {
     background-color: #fd435e;
     color: #c5c5c5;
     padding: 20px;
+    height: 200px;
 }
 
 nav {
     font-size: 22px;
+    position: relative;
 }
 
 .container nav a, .container nav button {
