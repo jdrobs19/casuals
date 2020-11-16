@@ -108,3 +108,43 @@ label {
     transition: all .5s;
     
 }
+
+.app-title a{
+    background-color: #dfdfdf;
+    color: #fd435e;
+    text-decoration: none;
+    box-shadow: 2px 2px 2px #65686e;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+a{
+    color: #fd435e;
+    text-decoration: none;
+    
+}
+
+#logout{
+    text-decoration: none;
+    
+    color: #65686e;
+    
+}
+
+
+.navbar{
+    background-color: #fd435e;
+}
+
+.hero{
+    margin: 0 auto;
+    text-align: center;
+}
+
+li a{
+    color: #65686e;
+}
+
+div a{
+   color: #fd435e; 
+}
